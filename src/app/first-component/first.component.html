@@ -1,0 +1,34 @@
+<div class="about-me">
+    <p>Name: {{name}}</p>
+    <p>lastName: {{lastName}}</p>
+    <p>Age: {{age}}</p>
+    <p>Job: {{job}}</p>
+    <p>Company: {{company}}</p>
+    
+    <button (click) = "editResume()" class="btn-primary">Edit</button>
+ </div>
+ 
+ <div *ngIf = "isShow" class="addit-me">
+     <p>Name:  <input type="text" [(ngModel)] = "name"></p>
+     <p>LastName: <input type="text" [(ngModel)] = "lastName"></p>
+     <p>Age: <input type="text" [(ngModel)] = "age"></p>
+     <p>Job: <input type="text" [(ngModel)] = "job"></p>
+     <p>Company: <input type="text" [(ngModel)] = "company"></p>
+    
+     <button (click) = "close()" class="btn-primary">Close</button> 
+ </div>
+ 
+ <div class="skills">
+     
+ 
+     <ul>
+         <li *ngFor = " let s of skill"> {{s}}</li>
+     </ul>
+     
+     <button (click) = "newSkill()" class="btn-primary">add-newSkill</button>
+ </div>
+ 
+ <div *ngIf = "showAddList" class="enter-text" >
+     <input type="text" [(ngModel)] = "newElement">
+ 
+     <button (click) = "pushNewSkill()" class="btn-primary">add</button>
